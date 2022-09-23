@@ -2,9 +2,9 @@
   "name": "corona-board",
   "version": "1.0.0",
   "description": "Corona-board",
-  "main": "index.js",
+  "main": "coronaboard-api/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "youredith3@gmail.com",
   "license": "ISC",
