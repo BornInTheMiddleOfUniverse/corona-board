@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+// require('dotenv').config();
 
 const config = {
     host: process.env.CORONABOARD_MYSQL_HOST,
@@ -12,7 +13,6 @@ const sequelize = new Sequelize(config.database, config.user, config.password, {
     host: config.host,
     dialect: 'mysql',
 });
-
 module.exports = {
     sequelize,
     GlobalStat: require('./global-stat.model')(sequelize),
