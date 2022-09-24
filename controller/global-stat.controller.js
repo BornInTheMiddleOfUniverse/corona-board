@@ -1,4 +1,6 @@
 const { GlobalStat } = require("../database");
+const { wrapWithErrorHandler } = require('../util');
+
 
 async function getAll(req, res) {
   const result = await GlobalStat.findAll();
@@ -38,9 +40,9 @@ async function remove(req, res) {
     res.status(200).json({ result: 'success' });
   }
   
-  module.exports = {
+  module.exports = wrapWithErrorHandler({
     getAll,
     insertOrUpdate,
     remove,
-  };
+  });
   
