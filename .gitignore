@@ -1,2 +1,5 @@
 .env
 /node_modules
+
+tools/node_modules
+tools/credentials.json
