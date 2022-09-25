@@ -1,9 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { sequelize } = require('./database');
+const { sequelize } = require('./coronaboard-api/database');
 
-const globalStatController = require('./controller/global-stat.controller');
-const keyValueController = require('./controller/key-value.controller');
+const globalStatController = require('./coronaboard-api/controller/global-stat.controller');
+const keyValueController = require('./coronaboard-api/controller/key-value.controller');
 
 async function launchServer() {
     const app = express();

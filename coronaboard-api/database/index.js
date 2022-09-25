@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-// require('dotenv').config();
+require('dotenv').config();
 
 const config = {
   host: process.env.CORONABOARD_MYSQL_HOST,

@@ -57,6 +57,7 @@ class SheetApiClientFactory {
       rl.question(
         "인증이 완료되어 발급된 코드를 여기에 붙여넣으세요: ",
         (code) => {
+            console.log(code);
           resolve(code);
         }
       );
