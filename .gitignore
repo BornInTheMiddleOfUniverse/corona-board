@@ -1,7 +1,10 @@
 .env
 /node_modules
 
+coronaboard-web/package-lock.json
+
 tools/node_modules
 tools/credentials.json
+tools/package-lock.json
 
 crawler/node_modules
