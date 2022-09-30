@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/react';
 
-export default function Slide(props) {
+export function Slide(props) {
     const { title, children } = props;
 return (
     <div 
