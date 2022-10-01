@@ -9,7 +9,7 @@ const TOKEN_PATH = "accessToken.json";
 class SheetApiClientFactory {
   //create google sheet api client
   static async create() {
-    const credential = fs.readFileSync("tools/credentials.json");
+    const credential = fs.readFileSync("./credentials.json");
     const auth = await this._authorize(JSON.parse(credential));
     return google.sheets({ version: "v4", auth });
   }
