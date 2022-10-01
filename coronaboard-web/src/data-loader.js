@@ -1,8 +1,8 @@
-import _ from 'lodash';
-import countryInfo from '../tools/downloaded/countryInfo.json';
-import axios from 'axios';
-import { subdays } from 'date-fns';
-import { format, utcToZonedTime } from 'date-fns-tz';
+const _ = require("lodash");
+const countryInfo = require('../../tools/downloaded/countryInfo.json');
+const axios = require('axios');
+const { subDays } = require('date-fns');
+const { format, utcToZonedTime } = require('date-fns-tz');
 
 async function getDataSource() {
   const countryByCc = _.keyBy(countryInfo, 'cc');
@@ -19,11 +19,11 @@ async function generateGlobalStats() {
 
   const groupedByDate = _.groupBy(response.data.result, 'date');
 
-  const now = newDate('2021-06-05');
+  const now = new Date('2021-06-05');
   const timeZone = 'Asia/Seoul';
   const today = format(utcToZonedTime(now, timeZone), 'yyyy-MM-dd');
   const yesterday = format(
-    utcToZonedTime(subdays(now, 1), timeZone),
+    utcToZonedTime(subDays(now, 1), timeZone),
     'yyyy-MM-dd',
   );
 
