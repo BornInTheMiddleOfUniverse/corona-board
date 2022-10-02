@@ -1,4 +1,4 @@
-const _ = require("lodash");
+import _ from "lodash";
 const countryInfo = require('../../tools/downloaded/countryInfo.json');
 const axios = require('axios');
 const { subDays } = require('date-fns');

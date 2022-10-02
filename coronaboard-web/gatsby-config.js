@@ -1,3 +1,1 @@
-module.exports = {
-  plugins: ['gatsby-plugin-emotion'],
-}
+export const plugins = ['gatsby-plugin-emotion'];

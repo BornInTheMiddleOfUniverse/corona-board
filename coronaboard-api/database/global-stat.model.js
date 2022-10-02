@@ -1,8 +1,8 @@
-const { DataTypes } = require('sequelize');
+import { DataTypes } from "sequelize";
 
-module.exports = (sequelize) => {
+const GlobalStat = (sequelize) => {
   return sequelize.define(
-    'GlobalStat',
+    "GlobalStat",
     {
       id: {
         autoIncrement: true,
@@ -45,20 +45,22 @@ module.exports = (sequelize) => {
     },
     {
       sequelize,
-      tableName: 'GlobalStat',
+      tableName: "GlobalStat",
       timestamps: false,
       indexes: [
         {
-          name: 'PRIMARY',
+          name: "PRIMARY",
           unique: true,
-          fields: [{ name: 'id' }],
+          fields: [{ name: "id" }],
         },
         {
-          name: 'ccWithDate',
+          name: "ccWithDate",
           unique: true,
-          fields: [{ name: 'cc' }, { name: 'date' }],
+          fields: [{ name: "cc" }, { name: "date" }],
         },
       ],
-    },
+    }
   );
 };
+
+export default GlobalStat;

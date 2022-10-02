@@ -1,5 +1,6 @@
 .env
-/node_modules
+coronaboard-api/node_modules
+coronaboard-api/package-lock.json
 
 tools/node_modules
 tools/credentials.json

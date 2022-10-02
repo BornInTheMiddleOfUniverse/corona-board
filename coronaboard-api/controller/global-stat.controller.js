@@ -1,13 +1,13 @@
-const { GlobalStat } = require("../database");
-const { wrapWithErrorHandler } = require('../util');
+import { GlobalStat } from "../database";
+import { wrapWithErrorHandler } from '../util';
 
 
-async function getAll(req, res) {
+const getAll = async (req, res) => {
   const result = await GlobalStat.findAll();
   res.status(200).json({ result });
 }
 
-async function insertOrUpdate(req, res) {
+const insertOrUpdate = async (req, res) => {
   const { cc, date } = req.body;
   if (!cc || !date) {
     res.status(400).json({ error: "cc and date are required" });
@@ -23,7 +23,7 @@ async function insertOrUpdate(req, res) {
   res.status(200).json({ result: "success" });
 }
 
-async function remove(req, res) {
+const remove = async(req, res) => {
     const { cc, date } = req.body;
     if (!cc || !date) {
       res.status(400).json({ error: 'cc and date are required' });
@@ -40,7 +40,7 @@ async function remove(req, res) {
     res.status(200).json({ result: 'success' });
   }
   
-  module.exports = wrapWithErrorHandler({
+  export default wrapWithErrorHandler({
     getAll,
     insertOrUpdate,
     remove,

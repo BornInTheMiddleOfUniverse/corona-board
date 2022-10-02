@@ -4,11 +4,15 @@
   "description": "Corona-board",
   "main": "index.js",
   "scripts": {
-    "start": "index.js"
+    "dev": "nodemon"
   },
   "author": "youredith3@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.3",
+    "@babel/node": "^7.19.1",
+    "@babel/preset-env": "^7.19.3",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.3.0",
     "axios": "^0.21.1",
@@ -21,6 +25,7 @@
     "gatsby-plugin-emotion": "^6.3.0",
     "lodash": "^4.17.20",
     "mysql2": "^2.2.5",
+    "nodemon": "^2.0.20",
     "puppeteer": "^18.0.5",
     "sequelize": "^6.3.5"
   }

@@ -1,5 +1,7 @@
-const Sequelize = require("sequelize");
-require('dotenv').config();
+import Sequelize from "sequelize";
+import "dotenv/config";
+import GlobalStat from "./global-stat.model";
+import KeyValue from "./key-value.model";
 
 const config = {
   host: process.env.CORONABOARD_MYSQL_HOST,
@@ -13,8 +15,11 @@ const sequelize = new Sequelize(config.database, config.user, config.password, {
   host: config.host,
   dialect: "mysql",
 });
-module.exports = {
+
+const db = {
   sequelize,
-  GlobalStat: require("./global-stat.model")(sequelize),
-  KeyValue: require("./key-value.model")(sequelize),
+  GlobalStat: GlobalStat(sequelize),
+  KeyValue: KeyValue(sequelize),
 };
+
+export default db;

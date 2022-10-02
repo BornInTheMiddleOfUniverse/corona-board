@@ -1,7 +1,7 @@
-const { KeyValue } = require("../database");
-const { wrapWithErrorHandler } = require("../util");
+import { KeyValue } from "../database";
+import { wrapWithErrorHandler } from "../util";
 
-async function get(req, res) {
+const get = async(req, res) => {
   const { key } = req.params;
   if (!key) {
     res.status(400).json({ error: "key is required" });
@@ -14,7 +14,7 @@ async function get(req, res) {
   res.status(200).json({ result });
 }
 
-async function insertOrUpdate(req, res) {
+const insertOrUpdate = async(req, res) => {
   const { key, value } = req.body;
   if (!key || !value) {
     res.status(400).json({ error: "key and value are required" });
@@ -26,7 +26,7 @@ async function insertOrUpdate(req, res) {
   res.status(200).json({ result: "success" });
 }
 
-async function remove(req, res) {
+const remove = async(req, res) => {
   const { key } = req.params;
   if (!key) {
     res.status(400).json({ error: "key is required" });
@@ -40,7 +40,7 @@ async function remove(req, res) {
   res.status(200).json({ result: "success" });
 }
 
-module.exports = wrapWithErrorHandler({
+export default wrapWithErrorHandler({
   get,
   insertOrUpdate,
   remove,

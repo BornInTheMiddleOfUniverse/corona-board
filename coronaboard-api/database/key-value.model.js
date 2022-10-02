@@ -1,6 +1,7 @@
-const { DataTypes } = require('sequelize');
+import Keyv from 'keyv';
+import { DataTypes } from 'sequelize';
 
-module.exports = (sequelize) => {
+const KeyValue = (sequelize) => {
   return sequelize.define(
     'KeyValue',
     {
@@ -38,3 +39,5 @@ module.exports = (sequelize) => {
     },
   );
 };
+
+export default KeyValue;
