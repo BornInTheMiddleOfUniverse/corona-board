@@ -1,6 +1,6 @@
-import { getDataSource } from "./src/data-loader";
+const { getDataSource } = require('./src/data-loader');
 
-export const createPages = async ({ actions }) => {
+exports.createPages = async ({ actions }) => {
   const { createPage } = actions;
   const dataSource = await getDataSource();
 
@@ -9,4 +9,4 @@ export const createPages = async ({ actions }) => {
     component: require.resolve('./src/templates/single-page.js'),
     context: { dataSource },
   });
-}
+};

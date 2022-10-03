@@ -16,13 +16,18 @@
   "dependencies": {
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.3.0",
+    "bootstrap": "^4.6.0",
+    "date-fns-tz": "^1.1.4",
+    "esm": "^3.2.25",
     "gatsby": "^3.10.2",
-    "gatsby-plugin-compile-es6-packages": "^2.1.1",
     "gatsby-plugin-emotion": "^6.3.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-bootstrap": "^1.6.1",
+    "react-dom": "^17.0.1",
+    "react-select": "^4.3.1"
   },
   "devDependencies": {
+    "babel-preset-gatsby": "^2.24.0",
     "prettier": "2.3.2"
   },
   "repository": {

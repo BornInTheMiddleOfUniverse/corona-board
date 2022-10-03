@@ -1,5 +1,5 @@
 import SheetApiClientFactory from "./sheet_api_client_factory";
-import SheetDownloader from "./sheet_downloader";
+import SheetDownloader from "./sheet_downloader.js";
 
 const main = async(req, res) => {
   try {

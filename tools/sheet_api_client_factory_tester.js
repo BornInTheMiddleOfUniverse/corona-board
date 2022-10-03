@@ -1,4 +1,4 @@
-import SheetApiClientFactory from './sheet_api_client_factory';
+import SheetApiClientFactory from './sheet_api_client_factory.js';
 
 const main = (req, res) => {
   try {
