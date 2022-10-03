@@ -1,6 +1,6 @@
-const { getDataSource } = require("./src/data-loader");
+import { getDataSource } from "./src/data-loader";
 
-exports.createPages = async ({ actions }) => {
+export const createPages = async ({ actions }) => {
   const { createPage } = actions;
   const dataSource = await getDataSource();
 

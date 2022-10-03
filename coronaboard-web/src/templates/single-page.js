@@ -1,7 +1,7 @@
 import React from 'react';
 import { Slide } from '../components/slide';
 
-export default function SinglePage({ pageContext }) {
+const SinglePage = ({ pageContext }) => {
   const { dataSource } = pageContext;
   const { countryByCc, globalStats } = dataSource;
   console.log(countryByCc);
@@ -19,4 +19,6 @@ export default function SinglePage({ pageContext }) {
       <Slide title={thirdSlideTitle}>예방 행동 수칙을 보여줍니다.</Slide>
     </div>
   );
-}
+};
+
+export default SinglePage;

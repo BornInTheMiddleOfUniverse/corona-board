@@ -1,5 +1,5 @@
 import { GlobalStat } from "../database";
-import { wrapWithErrorHandler } from '../util';
+import wrapWithErrorHandler from "../util";
 
 
 const getAll = async (req, res) => {

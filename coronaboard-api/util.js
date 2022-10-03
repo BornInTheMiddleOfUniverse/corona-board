@@ -8,12 +8,9 @@ const errorHandler = (block) => async (req, res) => {
 
 const wrapWithErrorHandler = (obj) => {
   Object.keys(obj).forEach((key) => {
-    //obj[key]?
     obj[key] = errorHandler(obj[key]);
   });
   return obj;
 };
 
-module.exports = {
-  wrapWithErrorHandler,
-};
+export default wrapWithErrorHandler;

@@ -1,6 +1,6 @@
-const fs = require("fs");
-const readline = require("readline");
-const { google } = require("googleapis");
+import fs from "fs";
+import readline from "readline";
+import { google } from "googleapis";
 
 // Reference: https://developers.google.com/sheets/api/quickstart/nodejs
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]; // read & write permission
@@ -70,5 +70,4 @@ class SheetApiClientFactory {
     return resp.tokens;
   }
 }
-
-module.exports = SheetApiClientFactory;
+export default SheetApiClientFactory;

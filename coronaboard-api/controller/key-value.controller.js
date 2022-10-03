@@ -1,5 +1,5 @@
 import { KeyValue } from "../database";
-import { wrapWithErrorHandler } from "../util";
+import wrapWithErrorHandler from "../util";
 
 const get = async(req, res) => {
   const { key } = req.params;

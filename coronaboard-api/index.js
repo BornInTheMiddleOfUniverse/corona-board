@@ -1,13 +1,14 @@
 import express from "express";
-import bodyParser from "body-parser";
 import db from "./database";
 import globalStatController from "./controller/global-stat.controller";
 import keyValueController from "./controller/key-value.controller";
 
 const launchServer = async () => {
+
   const app = express();
 
-  app.use(bodyParser.json());
+  app.use(express.urlencoded({ extended: true }));
+  app.use(express.json());
 
   app.get("/", (req, res) => {
     res.json({ message: "Hello CoronaBoard!" });

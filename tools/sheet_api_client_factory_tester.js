@@ -1,6 +1,6 @@
-const SheetApiClientFactory = require('./sheet_api_client_factory');
+import SheetApiClientFactory from './sheet_api_client_factory';
 
-async function main() {
+const main = (req, res) => {
   try {
     await SheetApiClientFactory.create();
   } catch (e) {
