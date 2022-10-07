@@ -1,8 +1,8 @@
-import _ from 'lodash';
-import countryInfo from '../../tools/downloaded/countryInfo.json';
-import axios from 'axios';
-import { subDays } from 'date-fns';
-import { format, utcToZonedTime } from 'date-fns-tz';
+const _ = require('lodash');
+const countryInfo = require('../../tools/downloaded/countryInfo.json');
+const axios = require('axios');
+const { subDays } = require('date-fns');
+const { format, utcToZonedTime } = require('date-fns-tz');
 
 const getDataSource = async (req, res) => {
   const countryByCc = _.keyBy(countryInfo, 'cc');
@@ -59,4 +59,6 @@ const createGlobalStatWithPrevField = (todayStats, yesterdayStats) => {
   return globalStatWithPrev;
 };
 
-export { getDataSource };
+module.exports = {
+  getDataSource,
+};
