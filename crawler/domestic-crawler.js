@@ -2,7 +2,7 @@ import _ from "lodash";
 import axios from "axios";
 import cheerio from "cheerio";
 
-class DomesticCrawler {
+export class DomesticCrawler {
   constructor() {
     this.client = axios.create({
       headers: {
@@ -30,11 +30,6 @@ class DomesticCrawler {
     const titles = $("h5.s_title_in3");
 
     titles.each((i, el) => {
-      console.log(`i ${i}`);
-      console.log(`el ${el}`);
-      console.log(` \$(el)
-      .contents() ${ $(el)
-        .contents()}`);
       const titleTextEl = $(el)
         .contents()
         .toArray()
@@ -127,4 +122,3 @@ class DomesticCrawler {
   }
 }
 
-export default DomesticCrawler;

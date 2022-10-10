@@ -2,7 +2,7 @@ import _ from "lodash";
 import fs from "fs";
 import path from "path";
 import { format, utcToZonedTime } from "date-fns-tz";
-import DomesticCrawler from "./domestic-crawler";
+import { DomesticCrawler } from "./domestic-crawler";
 
 const crawlAndUpdateDomestic = async (outputPath, apiClient) => {
   let prevData = {};
@@ -26,6 +26,7 @@ const crawlAndUpdateDomestic = async (outputPath, apiClient) => {
     domesticStat: await domesticCrawler.crawlStat(),
   };
 
+  //.isEqual() is lodash function. (deep comparison to compare crawledDate)
   if (_.isEqual(newData, prevData)) {
     console.log("domesticStat has not been changed");
     return;
@@ -49,6 +50,7 @@ const crawlAndUpdateDomestic = async (outputPath, apiClient) => {
   });
 
   // 성별, 나이별 데이터는 현재 날짜에 대한 데이터만 수집하기 때문에 간단하게 키-값을 저장하는 API를 통해 저장
+  //구조 분해 할당(Destructuring Assignment)
   const { byAge, bySex } = newDomesticStat;
   const value = JSON.stringify({ byAge, bySex });
   await apiClient.upsertKeyValue("byAgeAndSex", value);
