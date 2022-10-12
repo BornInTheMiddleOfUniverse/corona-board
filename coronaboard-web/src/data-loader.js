@@ -4,18 +4,17 @@ const axios = require('axios');
 const { subDays } = require('date-fns');
 const { format, utcToZonedTime } = require('date-fns-tz');
 
-const getDataSource = async (req, res) => {
+async function getDataSource() {
   const countryByCc = _.keyBy(countryInfo, 'cc');
   const globalStats = await generateGlobalStats();
   return { globalStats, countryByCc };
 };
 
-const generateGlobalStats = async (req, res) => {
+async function generateGlobalStats(){
   const apiClient = axios.create({
     baseURL: process.env.CORONABOARD_API_BASE_URL || 'http://localhost:8080',
   });
   const response = await apiClient.get('global-stats');
-
   const groupedByDate = _.groupBy(response.data.result, 'date');
 
   const now = new Date('2021-06-05');
@@ -36,7 +35,7 @@ const generateGlobalStats = async (req, res) => {
   );
 };
 
-const createGlobalStatWithPrevField = (todayStats, yesterdayStats) => {
+function createGlobalStatWithPrevField(todayStats, yesterdayStats) {
   const yesterdayStatsByCc = _.keyBy(yesterdayStats, 'cc');
 
   const globalStatWithPrev = todayStats.map((todayStat) => {

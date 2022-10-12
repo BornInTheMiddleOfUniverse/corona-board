@@ -23,7 +23,7 @@ const launchServer = async () => {
   app.delete("/key-value/:key", keyValueController.remove);
 
   try {
-    await db.sequelize.sync({ alter: true });
+    await db.sequelize.sync();
     console.log("Database is ready!");
   } catch (error) {
     console.log("Unable to connect to the database:");

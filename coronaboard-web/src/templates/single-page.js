@@ -1,12 +1,11 @@
 import React from 'react';
 import { Slide } from '../components/slide';
 
-const SinglePage = ({ pageContext }) => {
+export default function SinglePage({ pageContext }) {
   const { dataSource } = pageContext;
   const { countryByCc, globalStats } = dataSource;
-  console.log(countryByCc);
-  console.log(globalStats);
-  const { thirdSlideTitle } = dataSource;
+  // console.log(countryByCc);
+  // console.log(globalStats);
 
   return (
     <div>
@@ -21,4 +20,3 @@ const SinglePage = ({ pageContext }) => {
   );
 };
 
-export default SinglePage;

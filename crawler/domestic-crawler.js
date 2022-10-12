@@ -17,7 +17,6 @@ export class DomesticCrawler {
       "https://yjiq150.github.io/coronaboard-crawling-sample/clone/ncov/";
     const resp = await this.client.get(url);
     const $ = cheerio.load(resp.data);
-
     return {
       basicStats: this._extractBasicStats($),
       byAge: this._extractByAge($),

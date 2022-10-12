@@ -4,7 +4,7 @@ import GlobalStat from "./global-stat.model";
 import KeyValue from "./key-value.model";
 
 const config = {
-  host: process.env.CORONABOARD_MYSQL_HOST,
+  host: process.env.CORONABOARD_MYSQL_HOST || '127.0.0.1',
   port: 3306,
   database: "coronaboard",
   user: "coronaboard_admin",

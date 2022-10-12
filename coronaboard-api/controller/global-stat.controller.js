@@ -1,10 +1,11 @@
-import { GlobalStat } from "../database";
+import db from "../database";
 import wrapWithErrorHandler from "../util";
 
 
 const getAll = async (req, res) => {
-  const result = await GlobalStat.findAll();
-  res.status(200).json({ result });
+  const result = await db.GlobalStat.findAll();
+  res.status(200).json({ result }); 
+
 }
 
 const insertOrUpdate = async (req, res) => {
@@ -14,11 +15,11 @@ const insertOrUpdate = async (req, res) => {
     return;
   }
 
-  const count = await GlobalStat.count({ where: { cc, date } });
+  const count = await db.GlobalStat.count({ where: { cc, date } });
   if (count === 0) {
-    await GlobalStat.create(req.body);
+    await db.GlobalStat.create(req.body);
   } else {
-    await GlobalStat.update(req.body, { where: { cc, date } });
+    await db.GlobalStat.update(req.body, { where: { cc, date } });
   }
   res.status(200).json({ result: "success" });
 }
@@ -30,7 +31,7 @@ const remove = async(req, res) => {
       return;
     }
   
-    await GlobalStat.destroy({
+    await db.GlobalStat.destroy({
       where: {
         cc,
         date,
@@ -40,9 +41,10 @@ const remove = async(req, res) => {
     res.status(200).json({ result: 'success' });
   }
   
-  export default wrapWithErrorHandler({
-    getAll,
-    insertOrUpdate,
-    remove,
-  });
+
+export default wrapWithErrorHandler({
+  getAll,
+  insertOrUpdate,
+  remove,
+});
   

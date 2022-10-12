@@ -1,4 +1,4 @@
-import { KeyValue } from "../database";
+import db from "../database";
 import wrapWithErrorHandler from "../util";
 
 const get = async(req, res) => {
@@ -8,7 +8,7 @@ const get = async(req, res) => {
     return;
   }
 
-  const result = await KeyValue.findOne({
+  const result = await db.KeyValue.findOne({
     where: { key },
   });
   res.status(200).json({ result });
@@ -21,7 +21,7 @@ const insertOrUpdate = async(req, res) => {
     return;
   }
 
-  await KeyValue.upsert({ key, value });
+  await db.KeyValue.upsert({ key, value });
 
   res.status(200).json({ result: "success" });
 }
@@ -33,7 +33,7 @@ const remove = async(req, res) => {
     return;
   }
 
-  await KeyValue.destroy({
+  await db.KeyValue.destroy({
     where: { key },
   });
 
