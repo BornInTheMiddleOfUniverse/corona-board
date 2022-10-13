@@ -1,10 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { Dashboard } from "../components/dashboard";
+import { Notice } from "../components/notice";
 
 export default function SinglePage({ pageContext }) {
   const { dataSource } = pageContext;
-  const { lastUpdated, globalStats } = dataSource;
+  const { lastUpdated, globalStats, notice } = dataSource;
 
   const lastUpdatedFormatted = new Date(lastUpdated).toLocaleString();
 
@@ -37,6 +38,7 @@ export default function SinglePage({ pageContext }) {
       </p>
 
       <Dashboard globalStats={globalStats} />
+      <Notice notice={notice} />
     </div>
   );
 }

@@ -6,7 +6,7 @@ import { DomesticCrawler } from "./domestic-crawler";
 
 const crawlAndUpdateDomestic = async (outputPath, apiClient) => {
   let prevData = {};
-  
+
   //마지막으로 크롤링한 데이터가 output 디렉터리에 파일로 저장되어있다.
   const domesticStatPath = path.join(outputPath, "domestic-stat.json");
   try {

@@ -33,7 +33,6 @@ const crawlAndUpdateGlobal = async (outputPath, apiClient) => {
 
   const newGlobalStat = newData.globalStat
   const resp = await apiClient.findAllGlobalStat();
-  //difference btw  resp.result.filter  vs.  resp.filter  ??
   const oldRows = resp.result.filter((x) => x.date === crawledDate);
   const oldGlobalStat = _.keyBy(oldRows, 'cc');
 

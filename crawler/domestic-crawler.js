@@ -117,6 +117,7 @@ export class DomesticCrawler {
   _normalize(numberText) {
     const matches = /[0-9,]+/.exec(numberText);
     const absValue = matches[0];
+
     return parseInt(absValue.replace(/[\s,]*/g, ""));
   }
 }

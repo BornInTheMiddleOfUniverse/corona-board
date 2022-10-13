@@ -1,9 +1,9 @@
 const _ = require("lodash");
-const countryInfo = require("../../tools/downloaded/countryInfo.json");
-const axios = require("axios");
 const { subDays } = require("date-fns");
 const { format, utcToZonedTime } = require("date-fns-tz");
 const ApiClient = require("./api-client");
+const countryInfo = require("../../tools/downloaded/countryInfo.json");
+const notice = require("../../tools/downloaded/notice.json");
 
 async function getDataSource() {
   const countryByCc = _.keyBy(countryInfo, "cc");
@@ -13,7 +13,7 @@ async function getDataSource() {
   const groupedByDate = _.groupBy(allGlobalStats, "stats");
   const globalStats = generateGlobalStats(groupedByDate);
 
-  return { lastUpdated: Date.now(), globalStats, countryByCc };
+  return { lastUpdated: Date.now(), globalStats, countryByCc, notice: notice.filter((x) => !x.hidden) };
 };
 
 async function generateGlobalStats(groupedByDate){

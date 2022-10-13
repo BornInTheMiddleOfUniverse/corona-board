@@ -4,15 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev" : "babel-node main.js"
+    "dev": "babel-node main.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/cli": "^7.19.3",
-    "@babel/core": "^7.19.3",
-    "@babel/node": "^7.19.1",
-    "@babel/preset-env": "^7.19.4",
+    "dotenv": "^16.0.3",
     "googleapis": "^39.2.0"
-  }
+  },
+  "@babel/cli": "^7.19.3",
+  "@babel/core": "^7.19.3",
+  "@babel/node": "^7.19.1",
+  "@babel/preset-env": "^7.19.3"
 }

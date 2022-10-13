@@ -1,4 +1,6 @@
+import "dotenv/config";
 import SheetApiClientFactory from "./sheet_api_client_factory";
+
 import SheetDownloader from "./sheet_downloader";
 
 const main = async(req, res) => {
@@ -6,7 +8,7 @@ const main = async(req, res) => {
     const sheetApiClient = await SheetApiClientFactory.create();
     const downloader = new SheetDownloader(sheetApiClient);
 
-    const spreadsheetId = "1z2d4gBO8JSI8SEotnHDKdcq8EQ9X4O5fWPxeUCAqW1c";
+    const spreadsheetId = process.env.SPREADSHEET_ID;
 
     const notice = await downloader.downloadToJson(
       spreadsheetId,

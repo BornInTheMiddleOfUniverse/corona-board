@@ -1,10 +1,8 @@
 import _ from "lodash";
 import axios from "axios";
 import cheerio from "cheerio";
-
 //JSON automatically deserializes
 import countryInfo from "../tools/downloaded/countryInfo.json";
-// const countryInfo = require("../tools/downloaded/countryInfo.json");
 
 class GlobalCrawler {
   constructor() {
@@ -65,8 +63,7 @@ class GlobalCrawler {
       TotalTests: "tested",
     };
 
-    const normalizedData = rows
-      .map((row) => {
+    const normalizedData = rows.map((row) => {
         const countryStat = {};
         for (let i = 0; i < colNames.length; i++) {
           const colName = colNames[i];
