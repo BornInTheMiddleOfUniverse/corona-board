@@ -5,7 +5,6 @@ import wrapWithErrorHandler from "../util";
 const getAll = async (req, res) => {
   const result = await db.GlobalStat.findAll();
   res.status(200).json({ result }); 
-
 }
 
 const insertOrUpdate = async (req, res) => {

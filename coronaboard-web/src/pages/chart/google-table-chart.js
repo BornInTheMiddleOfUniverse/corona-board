@@ -22,20 +22,20 @@ export default function GoogleTableChart() {
     const [region, confirmed, death, released] = row;
 
     const confirmedFormatted = {
-      v: confirmed,
-      f: `${confirmed}<br><span class="text-danger">(+101)</span>`,
+      value: confirmed,
+      foramtted: `${confirmed}<br><span class="text-danger">(+101)</span>`,
     };
 
     const releasedFormatted = {
-      v: released,
-      f: `${released}<br><span class="text-success">(+30)</span>`,
+      value: released,
+      foramtted: `${released}<br><span class="text-success">(+30)</span>`,
     };
 
     const fatalityRate = (death / confirmed) * 100;
-    
+
     const fatalityRateFormatted = {
-      v: fatalityRate,
-      f: `${fatalityRate.toFixed(1)}%`,
+      value: fatalityRate,
+      foramtted: `${fatalityRate.toFixed(1)}%`,
     };
     return [
       region,

@@ -13,7 +13,7 @@ const launchServer = async () => {
   app.get("/", (req, res) => {
     res.json({ message: "Hello CoronaBoard!" });
   });
-
+  console.log('gsc', globalStatController);
   app.get("/global-stats", globalStatController.getAll);
   app.post("/global-stats", globalStatController.insertOrUpdate);
   app.delete("/global-stats", globalStatController.remove);
