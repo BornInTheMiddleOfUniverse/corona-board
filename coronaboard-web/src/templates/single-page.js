@@ -9,6 +9,8 @@ export default function SinglePage({ pageContext }) {
   const { dataSource } = pageContext;
   const { lastUpdated, globalStats, notice } = dataSource;
 
+  console.log('dataSource', dataSource);
+
   const lastUpdatedFormatted = new Date(lastUpdated).toLocaleString();
 
   return (

@@ -5,7 +5,6 @@ import { DashboardItem } from "./dashboard-item";
 
 export function Dashboard(props) {
   const { globalStats } = props;
-
   const {
     worldConfirmed,
     worldConfirmedPrev,

@@ -11,8 +11,8 @@ async function getDataSource() {
 
   const allGlobalStats = await apiClient.getAllGlobalStats();
   const groupedByDate = _.groupBy(allGlobalStats, 'date');
-
-  const globalStats = generateGlobalStats(groupedByDate);
+  const globalStats = await generateGlobalStats(groupedByDate);
+  console.log(globalStats, "globalstats");
   return {
     lastUpdated: Date.now(),
     globalStats,
@@ -29,11 +29,10 @@ async function generateGlobalStats(groupedByDate) {
     utcToZonedTime(subDays(now, 1), timeZone),
     'yyyy-MM-dd',
   );
-
   if (!groupedByDate[today]) {
     throw new Error('Data for today is missing');
   }
-
+  
   return createGlobalStatWithPrevField(
     groupedByDate[today],
     groupedByDate[yesterday],
