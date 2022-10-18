@@ -31,6 +31,11 @@ class ApiClient {
   async findKeyValue(key) {
     return await this.client.get(`key-value/${key}`);
   }
+
+  async getByAgeAndSex() {
+    const response = await this.client.get(`key-value/byAgeAndSex`);
+    return JSON.parse(response.result.value);
+  }
 }
 
 export default ApiClient;

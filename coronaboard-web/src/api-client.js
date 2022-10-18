@@ -18,5 +18,10 @@ class ApiClient {
     return response.result;
   }
 
+  async getByAgeAndBySex() {
+    const response = await this.client.get(`key-value/byAgeAndSex`);
+    return JSON.parse(response.result.value);
+  }
+
 }
 module.exports = ApiClient;
