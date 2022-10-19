@@ -6,6 +6,7 @@ const countryInfo = require('../../tools/downloaded/countryInfo.json');
 const notice = require('../../tools/downloaded/notice.json');
 const path = require('path');
 const fs = require('fs-extra');
+const { getYouTubeVideosByKeyword } = require('./youtube');
 
 async function getDataSource() {
   const countryByCc = _.keyBy(countryInfo, 'cc');
@@ -15,6 +16,7 @@ async function getDataSource() {
   const groupedByDate = _.groupBy(allGlobalStats, 'date');
   const globalStats = generateGlobalStats(groupedByDate);
   const globalChartDataByCc = generateGlobalChartDataByCc(groupedByDate);
+  const youtubeVideos = await getYouTubeVideosByKeyword('코로나19');
 
   const koreaTestChartData = generateKoreaTestChartData(allGlobalStats);
   const { byAge, bySex } = await apiClient.getByAgeAndBySex();
@@ -33,6 +35,8 @@ async function getDataSource() {
     koreaTestChartData,
     koreaBySexChartData: bySex,
     koreaByAgeChartData: byAge,
+
+    youtubeVideos,
   };
 }
 
