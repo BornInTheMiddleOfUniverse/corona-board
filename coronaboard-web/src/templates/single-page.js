@@ -3,6 +3,7 @@ import React from "react";
 import { css } from '@emotion/react';
 import { Dashboard } from "../components/dashboard";
 import { Notice } from "../components/notice";
+import { Navigation } from "../components/navigation";
 import { GlobalSlide } from "../components/global-slide";
 import { GlobalChartSlide } from "../components/global-chart-slide";
 import { KoreaChartSlide } from "../components/korea-chart-slide";
@@ -11,8 +12,6 @@ import { YoutubeSlide } from "../components/youtube-slide";
 export default function SinglePage({ pageContext }) {
   const { dataSource } = pageContext;
   const { lastUpdated, globalStats, notice } = dataSource;
-
-  console.log('dataSource', dataSource);
 
   const lastUpdatedFormatted = new Date(lastUpdated).toLocaleString();
 
@@ -46,6 +45,7 @@ export default function SinglePage({ pageContext }) {
 
       <Dashboard globalStats={globalStats} />
       <Notice notice={notice} />
+      <Navigation />
       <GlobalSlide id="global-slide" dataSource={dataSource} />
       <GlobalChartSlide id="global-chart-slide" dataSource={dataSource} />
       <KoreaChartSlide id="korea-chart-slide" dataSource={dataSource} />
