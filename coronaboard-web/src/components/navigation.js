@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { css } from '@emotion/react';
 import { Nav, Navbar } from 'react-bootstrap';
-import { animateScroll, Link, Events } from 'react-scroll';
+import { animateScroll, Link } from 'react-scroll';
 
 export function Navigation() {
   const menubarHeight = 45;
@@ -15,7 +15,6 @@ export function Navigation() {
   const onScroll = () => {
     if (
       window.scrollY > 0 &&
-      //?getBoundingClidentRect
       navBarWrapper.current.getBoundingClientRect().top <= 0
     ) {
       setFixedTop(true);

@@ -1,7 +1,7 @@
 import express from "express";
-import db from "./database";
-import globalStatController from "./controller/global-stat.controller";
-import keyValueController from "./controller/key-value.controller";
+import db from "./src/database";
+import globalStatController from "./src/controller/global-stat.controller";
+import keyValueController from "./src/controller/key-value.controller";
 
 const launchServer = async () => {
 

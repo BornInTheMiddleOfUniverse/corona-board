@@ -1,4 +1,3 @@
-import Keyv from 'keyv';
 import { DataTypes } from 'sequelize';
 
 const KeyValue = (sequelize) => {

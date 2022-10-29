@@ -1,9 +1,10 @@
 {
   "name": "corona-board",
   "version": "1.0.0",
-  "description": "Corona-board",
+  "description": "corona-board",
   "main": "index.js",
   "scripts": {
+    "build": "babel src -d build",
     "dev": "nodemon"
   },
   "author": "youredith3@gmail.com",
