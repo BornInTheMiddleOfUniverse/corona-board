@@ -2,10 +2,10 @@
 coronaboard-api/node_modules
 coronaboard-api/package-lock.json
 
+crawler/node_modules
+
 tools/node_modules
 tools/credentials.json
 tools/package-lock.json
-
-crawler/node_modules
 
 coronaboard-ec2-key.cer 

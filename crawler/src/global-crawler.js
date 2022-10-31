@@ -2,7 +2,7 @@ import _ from "lodash";
 import axios from "axios";
 import cheerio from "cheerio";
 //JSON automatically deserializes
-import countryInfo from "../tools/downloaded/countryInfo.json";
+import countryInfo from "../../tools/downloaded/countryInfo.json";
 
 class GlobalCrawler {
   constructor() {
