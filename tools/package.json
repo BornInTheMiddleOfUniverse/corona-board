@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "babel src -d build",
     "dev": "babel-node main.js"
   },
   "author": "",
