@@ -24,12 +24,7 @@ var config = {
 };
 var sequelize = new _sequelize["default"](config.database, config.user, config.password, {
   host: config.host,
-  dialect: "mysql",
-  dialectOptions: {
-    options: {
-      requestTimeout: 3000
-    }
-  }
+  dialect: "mysql"
 });
 var db = {
   sequelize: sequelize,
