@@ -21,7 +21,7 @@ var main = /*#__PURE__*/function () {
           case 3:
             sheetApiClient = _context.sent;
             downloader = new _sheet_downloader["default"](sheetApiClient);
-            spreadsheetId = process.env.SPREADSHEET_ID;
+            spreadsheetId = "1z2d4gBO8JSI8SEotnHDKdcq8EQ9X4O5fWPxeUCAqW1c";
             _context.next = 8;
             return downloader.downloadToJson(spreadsheetId, "notice", "downloaded/notice.json");
           case 8:
