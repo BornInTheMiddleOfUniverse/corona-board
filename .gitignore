@@ -1,14 +1,2 @@
 .env
-coronaboard-api/node_modules
-coronaboard-api/package-lock.json
-
-crawler/node_modules
-
-tools/node_modules
-tools/credentials.json
-tools/package-lock.json
-# tools/build/credentials.json
-tools/build/package-lock.json
-
-coronaboard-ec2-key.cer 
 coronaboard-ec2-key2.cer 

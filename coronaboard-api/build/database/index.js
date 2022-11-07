@@ -4,17 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-
 var _sequelize = _interopRequireDefault(require("sequelize"));
-
 require("dotenv/config");
-
 var _globalStat = _interopRequireDefault(require("./global-stat.model"));
-
 var _keyValue = _interopRequireDefault(require("./key-value.model"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var config = {
   host: process.env.CORONABOARD_MYSQL_HOST,
   port: 3306,

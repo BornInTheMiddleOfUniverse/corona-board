@@ -4,9 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-
 var _sequelize = require("sequelize");
-
 var GlobalStat = function GlobalStat(sequelize) {
   return sequelize.define("GlobalStat", {
     id: {
@@ -68,6 +66,5 @@ var GlobalStat = function GlobalStat(sequelize) {
     }]
   });
 };
-
 var _default = GlobalStat;
 exports["default"] = _default;

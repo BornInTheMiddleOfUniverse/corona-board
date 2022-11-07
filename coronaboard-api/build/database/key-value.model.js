@@ -4,9 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-
 var _sequelize = require("sequelize");
-
 var KeyValue = function KeyValue(sequelize) {
   return sequelize.define('KeyValue', {
     id: {
@@ -42,6 +40,5 @@ var KeyValue = function KeyValue(sequelize) {
     }]
   });
 };
-
 var _default = KeyValue;
 exports["default"] = _default;
